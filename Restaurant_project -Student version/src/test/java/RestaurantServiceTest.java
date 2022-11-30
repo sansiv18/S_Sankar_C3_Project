@@ -58,4 +58,16 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void order_total_value_should_match() throws Exception{
+        restaurant = service.findRestaurantByName("Amelie's cafe");
+        List<Item> menuList = restaurant.getMenu();
+        try{
+            //service.orderTotal(menuList);
+            assertEquals(388,service.orderTotal(menuList));
+        }catch (Exception e){
+            System.out.println("Exception "+ e);
+        }
+    }
+
 }
