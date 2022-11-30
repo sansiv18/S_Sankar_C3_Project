@@ -32,4 +32,13 @@ public class RestaurantService {
         return restaurants;
     }
 
+    public int orderTotal(List<Item> items){
+        int total = 0;
+
+        for (Item item:items) {
+            total+=item.getPrice();
+        }
+        return total;
+    }
+
 }
